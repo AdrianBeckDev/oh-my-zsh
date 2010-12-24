@@ -1,6 +1,6 @@
 # Aliases
 alias g='git'
-alias t='tig'
+alias t='tig status'
 alias s='git status'
 alias gl='git pull'
 alias glr='git pull --rebase'
