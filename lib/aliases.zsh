@@ -4,6 +4,7 @@ alias po='popd'
 
 # Basic directory operations
 alias ...='cd ../..'
+alias ....='cd ../../..'
 alias -- -='cd -'
 
 # Super user
@@ -13,6 +14,8 @@ alias _='sudo'
 
 # Show history
 alias history='fc -l 1'
+# History alias
+alias h='history'
 
 # List direcory contents
 alias lsa='ls -lah'
@@ -21,3 +24,6 @@ alias ll='ls -l'
 alias sl=ls # often screw this up
 
 alias afind='ack-grep -il'
+
+# Lists the size of all the folders and files
+alias ducks='du -cks * | sort -rn|head -10'
