@@ -25,5 +25,6 @@ alias sl=ls # often screw this up
 
 alias afind='ack-grep -il'
 
-# Lists the size of all the folders and files
 alias ducks='du -cks * | sort -rn|head -10'
+
+alias x=extract
