@@ -13,15 +13,6 @@ alias apt-hop='sudo apt-get update && sudo apt-get upgrade'
 # Resource this file
 alias reload=". ~/.zshrc"
 
-# Man inside vim
-man() { vim -X -R -c "Man $*" -c "only" -c "set nomodifiable" }
-
-# Search
-if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is available
-  ack(){
-    ack-grep "$*" --color-match=green --color-filename=blue --smart-case
-  }
-  ackw(){
-    ack-grep "$*" --color-match=green --color-filename=blue --word-regexp --smart-case
-  }
-fi
+# Github gem
+alias github="/var/lib/gems/1.8/gems/github-*/bin/github"
+alias gh="/var/lib/gems/1.8/gems/github-*/bin/gh"
