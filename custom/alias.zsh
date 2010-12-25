@@ -1,5 +1,5 @@
 # Ctags
-alias ct="rm tags && ctags-exuberant -h '.php' --PHP-kinds=+cf --recurse --exclude=*/cache/* --exclude=*/logs/* --exclude=*/data/* --exclude='\.git' --exclude='\.svn' --languages=PHP &"
+alias ct="rm tags && ctags-exuberant -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --languages=PHP &"
 
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
