@@ -1,3 +1,6 @@
+# Vim
+alias v="vim"
+
 # Ctags
 alias ct="rm tags && ctags-exuberant -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cache/*' --exclude='*/logs/*' --exclude='*/data/*' --exclude='\.git' --exclude='\.svn' --languages=PHP &"
 

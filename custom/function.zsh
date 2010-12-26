@@ -9,4 +9,4 @@ if type -P ack-grep &>/dev/null ; then # Use ack for grepping and find if ack is
 fi
 
 # Man inside vim
-man() { vim -X -R -c "Man $*" -c "only" -c "set nomodifiable" }
+man() { vim -X -M -c "Man $*" -c "only" }
