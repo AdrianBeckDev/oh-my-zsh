@@ -30,6 +30,5 @@ calc(){ awk "BEGIN{ print $* }" ;}
 
 # Switch to exercise.com hardware
 exercisehardware() {
-    xrandr --output VGA1 --auto
-    xrandr --output LVDS1 --off
+    xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 272x1080 --rotate normal --output DP1 --off --output VGA1 --mode 1920x1080 --pos 0x0 --rotate normal
 }
