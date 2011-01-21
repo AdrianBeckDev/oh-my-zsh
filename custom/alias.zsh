@@ -7,9 +7,6 @@ alias ct="rm tags && ctags -h '.php' --PHP-kinds=+cf --recurse --exclude='*/cach
 # PHPUnit
 alias phpunituntil="phpunit --stop-on-failure --stop-on-error"
 
-# Clear the swap
-alias swap='sudo swapoff -a && sudo swapon -a'
-
 # Resource this file
 alias reload=". ~/.zshrc"
 
@@ -18,9 +15,6 @@ alias startwebserver="sudo /etc/rc.d/nginx start && sudo /etc/rc.d/php-fpm start
 
 # Restart web server
 alias restartwebserver="sudo /etc/rc.d/nginx restart && sudo /etc/rc.d/php-fpm restart && sudo /etc/rc.d/mongodb restart"
-
-# Remember SSH keys
-alias kc="eval `keychain --eval --agents ssh id_rsa`"
 
 # Man inside vim
 man() { vim -X -M -c "Man $*" -c "only" }
