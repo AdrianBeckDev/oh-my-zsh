@@ -26,3 +26,12 @@ calc(){ awk "BEGIN{ print $* }" ;}
 exercisehardware() {
     xrandr --output HDMI1 --off --output LVDS1 --mode 1366x768 --pos 272x1080 --rotate normal --output DP1 --off --output VGA1 --mode 1920x1080 --pos 0x0 --rotate normal
 }
+
+# Launch music player daemon and client
+music() {
+    if [ ! -f ~/.mpd/mpd.pid ]; then
+        echo "Launching Music Player Daemon..."
+        mpd ~/.mpd/mpd.conf
+    fi
+    ncmpcpp
+}
