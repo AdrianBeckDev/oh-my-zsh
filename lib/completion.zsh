@@ -24,6 +24,7 @@ fi
 zstyle ':completion:*' list-colors ''
 
 # should this be in keybindings?
+# no such keymap ->menuselect'
 #bindkey -M menuselect '^o' accept-and-infer-next-history
 
 zstyle ':completion:*:*:*:*:*' menu select
