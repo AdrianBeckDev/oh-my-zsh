@@ -35,3 +35,5 @@ music() {
     fi
     ncmpcpp
 }
+
+alias radio="mplayer -playlist"
