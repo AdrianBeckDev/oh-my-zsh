@@ -1,6 +1,7 @@
 # get the name of the branch we are on
 function git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  [ ! -f .git/HEAD ] && return
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(cat .git/HEAD | cut -c1-6)
   echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
