@@ -2,7 +2,9 @@
 function git_prompt_info() {
   [ ! -f .git/HEAD ] && return
   ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(cat .git/HEAD | cut -c1-6)
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  prompt="$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  [ -f .git/BISECT_START ] && prompt="$prompt{bisecting}"
+  echo $prompt
 }
 
 parse_git_dirty () {
