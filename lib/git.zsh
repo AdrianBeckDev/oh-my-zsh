@@ -1,10 +1,18 @@
 # get the name of the branch we are on
 function git_prompt_info() {
-  [ ! -f .git/HEAD ] && return
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || ref=$(cat .git/HEAD | cut -c1-6)
-  prompt="$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
-  [ -f .git/BISECT_START ] && prompt="$prompt{bisecting}"
-  echo $prompt
+    [ ! -f .git/HEAD ] && return
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="*detached*"
+    prompt="$ZSH_THEME_GIT_PROMPT_PREFIX"
+    prompt="$prompt${ref#refs/heads/}"
+    prompt="$prompt$(git_prompt_short_sha)"
+    prompt="$prompt$(parse_git_bisecting)"
+    prompt="$prompt$ZSH_THEME_GIT_PROMPT_SUFFIX"
+    echo $prompt
+}
+
+# Checks if we are bisecting
+function parse_git_bisecting() {
+    [ -f .git/BISECT_START ] && echo " *bisect*"
 }
 
 # Checks if working tree is dirty
