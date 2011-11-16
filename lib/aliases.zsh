@@ -16,6 +16,6 @@ alias su='su -m'
 alias history='fc -l 1'
 
 # List direcory contents
-alias lsa='ls -lah'
-alias l='ls -la'
+#alias lsa='ls -lah'
+alias l='ls -lah'
 alias ll='ls -l'
