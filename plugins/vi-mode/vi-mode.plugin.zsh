@@ -31,8 +31,16 @@ zle -N accept_line
 zle -N edit-command-line
 
 # Avoid binding ^J, ^M,  ^C, ^?, ^S, ^Q, etc.
-bindkey -d # Reset to default.
-bindkey -v # Use vi key bindings.
+#bindkey -d # Reset to default.
+#bindkey -v # Use vi key bindings.
+
+#changing mode clobbers the keybinds, so store the keybinds before and execute
+#them after
+binds=`bindkey -L`
+bindkey -v
+for bind in ${(@f)binds}; do eval $bind; done
+unset binds
+
 bindkey -M vicmd "^M" accept_line # Alow RETURN in vi command.
 bindkey -M vicmd v edit-command-line # ESC-v to edit in an external editor.
 
