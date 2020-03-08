@@ -25,6 +25,9 @@ else
 fi
 unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 
+# Complete . and .. special directories
+zstyle ':completion:*' special-dirs true
+
 zstyle ':completion:*' list-colors ''
 
 # should this be in keybindings?
@@ -73,3 +76,6 @@ if [[ $COMPLETION_WAITING_DOTS = true ]]; then
   zle -N expand-or-complete-with-dots
   bindkey "^I" expand-or-complete-with-dots
 fi
+
+# automatically load bash completion functions
+autoload -Uz bashcompinit && bashcompinit
